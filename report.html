@@ -1,0 +1,71 @@
+<DOCTYPE html>
+  <html>
+  <title>Incident Management</title>
+  <head>
+    <h1>Incident Management Form</h1>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="expander"><h4>Second Question</h4></div>
+    <form id="platformqs">
+      <div class="questions" id="level">
+        <p>
+          <input type="checkbox" id="allegro" name="system" value="allegro">
+          <label for="allegro">Allegro</label>
+          <br>
+          <input type="checkbox" id="admin" name="system" value="Admin">
+          <label for="admin">Admin</label>
+          <br>
+          <input type="checkbox" id="batman" name="system" value="Batman">
+          <label for="batman">Batman</label>
+          <br>
+          <input type="checkbox" id="computers" name="system" value="Computers and Tablets">
+          <label for="computers">Computers and Tablets</label>
+          <br>
+          <input type="checkbox" id="fixation" name="system" value="Fixation">
+          <label for="fixation">Fixation</label>
+          <br>
+          <input type="checkbox" id="jps" name="system" value="JPs">
+          <label for="jps">JPs</label>
+          <br>
+          <input type="checkbox" id="network" name="system" value="Network">
+          <label for="network">Network</label>
+          <br>
+          <input type="checkbox" id="papercut" name="system" value="Papercutting Machines">
+          <label for="papercut">Papercutting/Jaws</label>
+          <br>
+          <input type="checkbox" id="polys" name="system" value="Polys">
+          <label for="polys">Polys</label>
+          <br>
+          <input type="checkbox" id="sublimation" name="system" value="Sublimation">
+          <label for="sublimation">Sublimation</label>
+          <br>
+          <input type="checkbox" id="towers" name="system" value="Towers">
+          <label for="towers">Towers</label>
+          <br>
+          <input type="checkbox" id="1618s" name="system" value="1618s">
+          <label for="1618s">1618s</label>
+          <br>
+          <label for="systemfix">Other</label><br>
+          <textarea id="systemfix" name="system"></textarea>
+
+          <br>
+          <input type="button" class="submission" onclick="systemCheck()" value="Continue">
+        </p>
+      </div>
+      <div class="questions">
+        <input type='button' class="reset" width="50" onclick='uncheckAll()' value="Edit Response"/>
+      </div>
+      <div class="response">
+        <p><span id='rating'></span></p>
+        <!--input type="text" id="rating" size=100 readonly !-->
+      </div>
+    </form>
+
+
+ </body>
+
+</html>
+
+  
