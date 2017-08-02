@@ -1,21 +1,16 @@
 <!doctype html>
 <head>
-  <!--<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="contact form example"> -->
   <title>Incident Management</title>
     <h1>Incident Management Form</h1>
   <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="style.css">
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="report.js"> </script>
-  <!--script type="text/javascript" src="/Users/Spoonflower/Desktop/Project%20Form%20Party/report.js"></script-->
 </head>
 
 <body>
 <form id="gform" method="POST" class="pure-form pure-form-stacked"
 action="https://script.google.com/macros/s/AKfycbx13tUc79k5NyFLlM319CTWDFaL70LIIkDaAXuVBAVzGY6njkU/exec">
-  <!-- change the form action to your script url -->
   <div class="sectionhead">
     <h4>Identify Yourself</h4>
   </div>
@@ -43,7 +38,7 @@ action="https://script.google.com/macros/s/AKfycbx13tUc79k5NyFLlM319CTWDFaL70LII
       <input type="button" class="collapse" onclick="severityCheck()" value="Continue" href="#level1">
   </div>
   <div class="questions">
-    <input type="button" class="reset" width="50" onclick='uncheckAll()' value="Edit Response" href="#level1"/>
+    <input type="button" class="reset" width="50" value="Edit Response" href="#level1"/>
   </div>
   <div>
     <p class="response"><span id="priority"></span></p>
@@ -54,90 +49,89 @@ action="https://script.google.com/macros/s/AKfycbx13tUc79k5NyFLlM319CTWDFaL70LII
       <h4>Second Question</h4>
     </div>
     <div class="questions" id="level2">
-          <input type="checkbox" id="allegro" name="systems" value="Allegro">
-          <label for="allegro">Allegro</label>
-          <br>
-          <input type="checkbox" id="admin" name="systems" value="Admin">
-          <label for="admin">Admin</label>
-          <br>
-          <input type="checkbox" id="batman" name="systems" value="Batman">
-          <label for="batman">Batman</label>
-          <br>
-          <input type="checkbox" id="computers" name="systems" value="Computers and Tablets">
-          <label for="computers">Computers and Tablets</label>
-          <br>
-          <input type="checkbox" id="fixation" name="system" value="Fixation">
-          <label for="fixation">Fixation</label>
-          <br>
-          <input type="checkbox" id="jps" name="systems" value="JPs">
-          <label for="jps">JPs</label>
-          <br>
-          <input type="checkbox" id="network" name="systems" value="Network">
-          <label for="network">Network</label>
-          <br>
-          <input type="checkbox" id="papercut" name="systems" value="Papercutting Machines">
-          <label for="papercut">Papercutting/Jaws</label>
-          <br>
-          <input type="checkbox" id="polys" name="systems" value="Polys">
-          <label for="polys">Polys</label>
-          <br>
-          <input type="checkbox" id="sublimation" name="systems" value="Sublimation">
-          <label for="sublimation">Sublimation</label>
-          <br>
-          <input type="checkbox" id="towers" name="systems" value="Towers">
-          <label for="towers">Towers</label>
-          <br>
-          <input type="checkbox" id="1618s" name="systems" value="1618s">
-          <label for="1618s">1618s</label>
-          <br>
-          <label for="systemfix">Other</label><br>
-          <textarea id="systemfix" name="systems"></textarea>
-
-          <br>
-          <input type="button" class="collapse" onclick="systemCheck()" value="Continue" href="#level2">
-      </div>
-    <div class="questions">
-        <input type="button" class="reset" width="50" onclick='uncheckAll()' value="Edit Response" href="#level2"/>
-      </div>
-    <div>
-      <p class="response"><span id="rating"></span></p>
-    </div>
+    <h3>What is the nature of the problem?</h3>
+      <input type="radio" id=mechanicalphysical name="nature" value="mechanical or physical">
+      <label for="mechanicalphysical">Mechanical or Physical in nature</label>
+      <br>
+      <input type="radio" id=softwarefiles name="nature" value="software or files">
+      <label for="softwarefiles">Related to Software or File Errors</label>
+      <br>
+      <input type="radio" id=adminwebsite name="nature" value="admin or website">
+      <label for="adminwebsite">Related to our Website/Admin</label>
+      <br>
+      <label type="radio" for="freenature">Other</label><br>
+      <textarea id="freenature" name="nature"></textarea>
+      <br>
+      <input type="button" class="collapse" onclick="natureCheck()" value="Continue" href="#level2">
+  </div>
+  <div class="questions">
+    <input type="button" class="reset" width="50" value="Edit Response" href="#level2"/>
+  </div>
+  <div>
+    <p class="response"><span id ='naturetype'></span></p>
+  </div>
 
 <!-- THIRD QUE$TION IS GONNA GO HERE -->
     <div class="sectionhead">
       <h4>Third Question</h4>
     </div>
     <div class="questions" id="level3">
-      <h3>What is the nature of the problem?</h3>
-        <input type="radio" id=mechanicalphysical name="nature" value="mechanical or physical">
-        <label for="mechanicalphysical">Mechanical or Physical in nature</label>
+        <input type="checkbox" id="allegro" name="systems" value="Allegro">
+        <label for="allegro">Allegro</label>
         <br>
-        <input type="radio" id=softwarefiles name="nature" value="software or files">
-        <label for="softwarefiles">Related to Software or File Errors</label>
+        <input type="checkbox" id="admin" name="systems" value="Admin">
+        <label for="admin">Admin</label>
         <br>
-        <input type="radio" id=adminwebsite name="nature" value="admin or website">
-        <label for="adminwebsite">Related to our Website/Admin</label>
+        <input type="checkbox" id="batman" name="systems" value="Batman">
+        <label for="batman">Batman</label>
         <br>
-        <label type="radio" for="freenature">Other</label><br>
-        <textarea id="freenature" name="nature"></textarea>
+        <input type="checkbox" id="computers" name="systems" value="Computers and Tablets">
+        <label for="computers">Computers and Tablets</label>
         <br>
-        <input type="button" class="collapse" onclick="natureCheck()" value="Continue" href="#level3">
+        <input type="checkbox" id="fixation" name="system" value="Fixation">
+        <label for="fixation">Fixation</label>
+        <br>
+        <input type="checkbox" id="jps" name="systems" value="JPs">
+        <label for="jps">JPs</label>
+        <br>
+        <input type="checkbox" id="network" name="systems" value="Network">
+        <label for="network">Network</label>
+        <br>
+        <input type="checkbox" id="papercut" name="systems" value="Papercutting Machines">
+        <label for="papercut">Papercutting/Jaws</label>
+        <br>
+        <input type="checkbox" id="polys" name="systems" value="Polys">
+        <label for="polys">Polys</label>
+        <br>
+        <input type="checkbox" id="sublimation" name="systems" value="Sublimation">
+        <label for="sublimation">Sublimation</label>
+        <br>
+        <input type="checkbox" id="towers" name="systems" value="Towers">
+        <label for="towers">Towers</label>
+        <br>
+        <input type="checkbox" id="1618s" name="systems" value="1618s">
+        <label for="1618s">1618s</label>
+        <br>
+        <label for="systemfix">Other</label><br>
+        <textarea id="systemfix" name="systems"></textarea>
+        <br>
+        <input type="button" class="collapse" onclick="systemCheck()" value="Continue" href="#level3">
     </div>
-    <div class="questions">
-      <input type="button" class="reset" width="50" onclick='uncheckAll()' value="Edit Response" href="#level3"/>
+  <div class="questions">
+      <input type="button" class="reset" width="50" value="Edit Response" href="#level3"/>
     </div>
-    <div>
-      <p class="response"><span id ='naturetype'></span></p>
-    </div>
+  <div>
+    <p class="response"><span id="rating"></span></p>
+  </div>
 
   <div class="questions">
-    <button class="button-success"><!-- pure-button button-xlarge-->
+    <button class="button-success" onclick='allTogether()'><!-- pure-button button-xlarge-->
     <!--<i class="fa fa-paper-plane"></i>-->&nbsp;Send Report</button>
   </div>
 
 </form>
 <!-- J  QUERY  TEST -->
-<!--<script type="text/javascript">
+<script type="text/javascript">
 $(document).ready(function(){
   if (jQuery) {
     // jQuery is loaded
@@ -147,13 +141,16 @@ $(document).ready(function(){
    alert("Doesn't Work");
  }
 });
-</script> -->
+</script>
 
   <!-- Customise the Thankyou Message People See when they submit the form: -->
   <div style="display:none;" id="thankyou_message">
     <div class="questions">
       <h2>Thank you for your submission.
       The correct person will be notified!</h2>
+      <p class="response"><span id ='finalScore'></span></p><br>
+      <p class="response"><span id ='ticketinfo'></span></p>
+      <p class="response"><span id ='otherinfo'></span></p>
     </div>
       <!-- "due to the severity of your issue, expect a respense in - ?" -->
   </div>
