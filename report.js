@@ -1,16 +1,19 @@
 $( document ).ready(function() {
   $( ".collapse" ).click(function() {
-    var target = $(this).attr("href");
+    var nextStep = $(this).parent().parent().next(".step");
+    var target = $(this).attr("data-target");
     $(target).slideToggle("fast", function(){
       $(".response").show();
-    });
+    })
+    $(nextStep).addClass("active");
   });
   $( ".reset" ).click(function() {
-    var target = $(this).attr("href");
+    var target = $(this).attr("data-target");
     $( target ).slideToggle( "slow", function() {
     })
   })
 });
+
 /*Establish Globals????*/
 var saveSeverity="";
 var saveNature="";
