@@ -10,7 +10,7 @@
 
 <body>
   <div class="wrapper">
-    <h1>Incident Management Form</h1>
+    <h1>Incident Management</h1>
 <form id="gform" method="POST" class="pure-form pure-form-stacked"
 action="https://script.google.com/macros/s/AKfycbx13tUc79k5NyFLlM319CTWDFaL70LIIkDaAXuVBAVzGY6njkU/exec">
   <div class="sectionhead">
@@ -19,13 +19,14 @@ action="https://script.google.com/macros/s/AKfycbx13tUc79k5NyFLlM319CTWDFaL70LII
   <div class="questions">
     <label for="email">Your Email Address:</label>
     <input id="email" name="email" type="email" value=""
-    required placeholder="your.name@email.com"/>
+    required placeholder="your.name@spoonflower.com"/>
     <span id="email-invalid" style="display:none">
         Must be a valid email address</span>
   </div>
+  <!-- FIRST QUE$TION IS GONNA GO HERE -->
   <div class="step active">
     <div class="sectionhead">
-      <h4>Question 1 of 3</h4>
+      <h4>Question 1 of 4</h4>
     </div>
     <div class="questions" id="level1">
       <h3>How is production affected?</h3>
@@ -47,11 +48,10 @@ action="https://script.google.com/macros/s/AKfycbx13tUc79k5NyFLlM319CTWDFaL70LII
       <p class="response"><span id="priority"></span></p>
     </div>
   </div>
-
   <!-- SECOND QUE$TION IS GONNA GO HERE -->
   <div class="step">
       <div class="sectionhead">
-        <h4>Question 2 of 3</h4>
+        <h4>Question 2 of 4</h4>
       </div>
       <div class="questions" id="level2">
       <h3>What is the nature of the problem?</h3>
@@ -65,7 +65,7 @@ action="https://script.google.com/macros/s/AKfycbx13tUc79k5NyFLlM319CTWDFaL70LII
         <label for="adminwebsite">Related to our Website/Admin</label>
         <br>
         <label type="radio" for="freenature">Other</label><br>
-        <textarea id="freenature" name="nature"></textarea>
+        <input type="textarea" id="freenature" name="naturetxt" value=""></textarea>
         <br>
         <input type="button" class="collapse pushit" onclick="natureCheck()" value="Continue" data-target="#level2">
     </div>
@@ -76,54 +76,151 @@ action="https://script.google.com/macros/s/AKfycbx13tUc79k5NyFLlM319CTWDFaL70LII
       <p class="response"><span id ='naturetype'></span></p>
     </div>
   </div>
-
   <!-- THIRD QUE$TION IS GONNA GO HERE -->
   <div class="step">
-      <div class="sectionhead">
-        <h4>Question 3 of 3</h4>
-      </div>
-      <div class="questions" id="level3">
-          <input type="checkbox" id="allegro" name="systems" value="Allegro">
-          <label for="allegro">Allegro</label>
-          <br>
-          <input type="checkbox" id="admin" name="systems" value="Admin">
-          <label for="admin">Admin</label>
-          <br>
-          <input type="checkbox" id="batman" name="systems" value="Batman">
-          <label for="batman">Batman</label>
-          <br>
-          <input type="checkbox" id="computers" name="systems" value="Computers and Tablets">
-          <label for="computers">Computers and Tablets</label>
-          <br>
-          <input type="checkbox" id="fixation" name="system" value="Fixation">
-          <label for="fixation">Fixation</label>
-          <br>
-          <input type="checkbox" id="jps" name="systems" value="JPs">
-          <label for="jps">JPs</label>
-          <br>
-          <input type="checkbox" id="network" name="systems" value="Network">
-          <label for="network">Network</label>
-          <br>
-          <input type="checkbox" id="papercut" name="systems" value="Papercutting Machines">
-          <label for="papercut">Papercutting/Jaws</label>
-          <br>
-          <input type="checkbox" id="polys" name="systems" value="Polys">
-          <label for="polys">Polys</label>
-          <br>
-          <input type="checkbox" id="sublimation" name="systems" value="Sublimation">
-          <label for="sublimation">Sublimation</label>
-          <br>
-          <input type="checkbox" id="towers" name="systems" value="Towers">
-          <label for="towers">Towers</label>
-          <br>
-          <input type="checkbox" id="1618s" name="systems" value="1618s">
-          <label for="1618s">1618s</label>
-          <br>
-          <label for="systemfix">Other</label><br>
-          <textarea id="systemfix" name="systems"></textarea>
-          <br>
-          <input type="button" class="collapse pushit" onclick="systemCheck()" value="Continue" data-target="#level3">
-      </div>
+    <div class="sectionhead">
+      <h4>Question 3 of 4</h4>
+    </div>
+    <div class="questions" id="level3">
+        <input type="checkbox" class="Q3" id="allegro" name="systems" value="Allegro" data-target="#subAllegro">
+        <label for="allegro">Allegro</label>
+        <div class="substep" id="subAllegro">
+          <label><input type="checkbox" id="allegro1" name="subsystems" value="Stick not sending">Stick not sending</label>
+          <label><input type="checkbox" id="allegro2" name="subsystems" value="Cannot start printing">Printing will not start</label>
+          <label><input type="checkbox" id="allegro3" name="subsystems" value="Belt stuck">Belt will not move</label>
+          <label><input type="checkbox" id="allegro4" name="subsystems" value="Crashing software">Software keeps crashing</label>
+          <label><input type="checkbox" id="allegro5" name="subsystems" value="Dryer malfunction">Dryer malfunction</label>
+          <label><input type="checkbox" id="allegro6" name="subsystems" value="Slow job population">Extremely slow job population</label>
+          <label><input type="checkbox" id="allegro7" name="subsystems" value="Repeated error screens">Repeated error screens</label>
+          <label><input type="checkbox" id="allegro8" name="subsystems" value="Brush/Wash tray error">Brush/Wash tray error</label>
+          <label><input type="checkbox" id="allegro9" name="subsystems" value="Flooding">Flooding</label>
+        </div>
+        <br>
+        <input type="checkbox" class="Q3" id="admin" name="systems" value="Admin" data-target="#subAdmin">
+        <label for="admin">Admin</label>
+        <div class="substep" id="subAdmin">
+          <label><input type="checkbox" id="admin1" name="subsystems" value="Site is down">Site is down</label>
+          <label><input type="checkbox" id="admin2" name="subsystems" value="Specific Page will not load">Specific Page will not load</label>
+          <label><input type="checkbox" id="admin3" name="subsystems" value="Button/function not working">Button/function not working</label>
+          <label><input type="checkbox" id="admin4" name="subsystems" value="Jobs will not send">Jobs will not send</label>
+          <!--label><input type="checkbox" id="admin5" name="subsystems" value="E">Stick not sending</label-->
+          <!--label><input type="checkbox" id="admin6" name="subsystems" value="F">Extremely slow job population</label-->
+        </div>
+        <br>
+        <input type="checkbox" class="Q3" id="batman" name="systems" value="Batman" data-target="#subBatman">
+        <label for="batman">Batman</label>
+        <div class="substep" id="subBatman">
+          <label><input type="checkbox" id="batman1" name="subsystems" value="Files not sending">Files not sending</label>
+          <label><input type="checkbox" id="batman2" name="subsystems" value="Software lockup/error">Software will not work/frozen</label>
+          <label><input type="checkbox" id="batman3" name="subsystems" value="Clips broken">Clips broken</label>
+          <!--label><input type="checkbox" id="batman4" name="subsystems" value="D">Software keeps crashing</label-->
+          <!--label><input type="checkbox" id="batman5" name="subsystems" value="E">Stick not sending</label-->
+          <!--label><input type="checkbox" id="batman6" name="subsystems" value="F">Extremely slow job population</label-->
+        </div>
+        <br>
+        <input type="checkbox" class="Q3" id="computers" name="systems" value="Computers and Tablets" data-target="#subComputers">
+        <label for="computers">Computers and Tablets</label>
+        <div class="substep" id="subComputers">
+          <label><input type="checkbox" id="computers1" name="subsystems" value="Power on failure">Will not turn on</label>
+          <label><input type="checkbox" id="computers2" name="subsystems" value="Locked up/slow">Locked up/slow</label>
+          <label><input type="checkbox" id="computers3" name="subsystems" value="Critical failure">Critical failure</label>
+          <label><input type="checkbox" id="computers4" name="subsystems" value="Program not accessible">Program not accessible</label>
+          <label><input type="checkbox" id="computers5" name="subsystems" value="Functions not working">Functions not working</label>
+          <!--label><input type="checkbox" id="computers6" name="subsystems" value="F">Extremely slow job population</label-->
+        </div>
+        <br>
+        <input type="checkbox" class="Q3" id="fixation" name="systems" value="Fixation" data-target="#subFixation">
+        <label for="fixation">Fixation</label>
+        <div class="substep" id="subFixation">
+          <label><input type="checkbox" id="fixation1" name="subsystems" value="Not feeding properly">Not feeding properly</label>
+          <label><input type="checkbox" id="fixation2" name="subsystems" value="Alarm triggered">Alarm triggered</label>
+          <label><input type="checkbox" id="fixation3" name="subsystems" value="Temperature incorrect">Temperature incorrect</label>
+          <label><input type="checkbox" id="fixation4" name="subsystems" value="Alarming amount of smoke">Alarming amount of smoke</label>
+          <label><input type="checkbox" id="fixation5" name="subsystems" value="Smells like gas">Smells like gas</label>
+          <!--label><input type="checkbox" id="fixation6" name="subsystems" value="F">Extremely slow job population</label-->
+        </div>
+        <br>
+        <input type="checkbox" class="Q3" id="jps" name="systems" value="JPs" data-target="#subJps">
+        <label for="jps">JPs</label>
+        <div class="substep" id="subJps">
+          <label><input type="checkbox" id="Jps1" name="subsystems" value="Belt not moving">Belt not moving</label>
+          <label><input type="checkbox" id="Jps2" name="subsystems" value="Printhead not moving">Printhead not moving</label>
+          <label><input type="checkbox" id="Jps3" name="subsystems" value="Files not sending">Files not sending</label>
+          <label><input type="checkbox" id="Jps4" name="subsystems" value="Printer software locked up">Printer software locked up</label>
+          <label><input type="checkbox" id="Jps5" name="subsystems" value="Script Error">Script Error</label>
+          <label><input type="checkbox" id="Jps6" name="subsystems" value="Ergosoft/Colorburst Crashing">Ergosoft/Colorburst Crashing</label>
+        </div>
+        <br>
+        <input type="checkbox" class="Q3" id="network" name="systems" value="Network" data-target="#subNetwork">
+        <label for="network">Network</label>
+        <div class="substep" id="subNetwork">
+          <label><input type="checkbox" id="network1" name="subsystems" value="Network down">Network appears to be down</label>
+          <label><input type="checkbox" id="network2" name="subsystems" value="Unstable network">Devices will not stay connected</label>
+          <!--label><input type="checkbox" id="network3" name="subsystems" value="C">Belt will not move</label-->
+          <!--label><input type="checkbox" id="network4" name="subsystems" value="D">Software keeps crashing</label-->
+          <!--label><input type="checkbox" id="network5" name="subsystems" value="E">Stick not sending</label-->
+        </div>
+        <br>
+        <input type="checkbox" class="Q3" id="papercut" name="systems" value="Papercutting Machines" data-target="#subPapercut">
+        <label for="papercut">Papercutting/Jaws</label>
+        <div class="substep" id="subPapercut">
+          <label><input type="checkbox" id="papercut1" name="subsystems" value="Blades not cutting">Blades not cutting</label>
+          <label><input type="checkbox" id="papercut2" name="subsystems" value="Machine will not power on">Machine will not power on</label>
+          <label><input type="checkbox" id="papercut3" name="subsystems" value="Machine does not advance">Machine does not advance</label>
+          <label><input type="checkbox" id="papercut4" name="subsystems" value="Sticker Spooler not working">Sticker "Spooler" not working</label>
+          <!--label><input type="checkbox" id="papercut5" name="subsystems" value="E">Stick not sending</label-->
+          <!--label><input type="checkbox" id="papercut6" name="subsystems" value="F">Extremely slow job population</label-->
+        </div>
+        <br>
+        <input type="checkbox" class="Q3" id="polys" name="systems" value="Polys" data-target="#subPolys">
+        <label for="polys">Polys</label>
+        <div class="substep" id="subPolys">
+          <label><input type="checkbox" id="polys1" name="subsystems" value="Jobs not sending">Jobs not sending</label>
+          <label><input type="checkbox" id="polys2" name="subsystems" value="Printing will not start">Printing will not start</label>
+          <label><input type="checkbox" id="polys3" name="subsystems" value="Colorburst/Ergosoft errors">Colorburst/Ergosoft errors</label>
+          <label><input type="checkbox" id="polys4" name="subsystems" value="Color quality issues">Color quality issues</label>
+          <!--label><input type="checkbox" id="polys5" name="subsystems" value="E">Stick not sending</label-->
+          <!--label><input type="checkbox" id="polys6" name="subsystems" value="F">Extremely slow job population</label-->
+        </div>
+        <br>
+        <input type="checkbox" class="Q3" id="sublimation" name="systems" value="Sublimation" data-target="#subSublimation">
+        <label for="sublimation">Sublimation</label>
+        <div class="substep" id="subSublimation">
+          <label><input type="checkbox" id="sublimation1" name="subsystems" value="Feeding incorrectly">Issues with fabric/paper feeding</label>
+          <label><input type="checkbox" id="sublimation2" name="subsystems" value="Temperature incorrect">Temperature incorrect</label>
+          <label><input type="checkbox" id="sublimation3" name="subsystems" value="Alarming amount of smoke">Alarming amount of smoke</label>
+          <label><input type="checkbox" id="sublimation4" name="subsystems" value="Smells like gas">Smells like gas</label>
+          <label><input type="checkbox" id="sublimation5" name="subsystems" value="Machine would not power on">Machine would not power on/label-->
+          <label><input type="checkbox" id="sublimation6" name="subsystems" value="Alarm triggered">Alarm triggered</label>
+        </div>
+        <br>
+        <input type="checkbox" class="Q3" id="towers" name="systems" value="Towers" data-target="#subTowers">
+        <label for="towers">Towers</label>
+        <div class="substep" id="subTowers">
+          <label><input type="checkbox" id="towers1" name="subsystems" value="Tower broken">Tower is broken/down</label>
+          <label><input type="checkbox" id="towers2" name="subsystems" value="High proportion of unfinished jobs">High proportion of unfinished jobs</label>
+          <label><input type="checkbox" id="towers3" name="subsystems" value="Critical file is not ready">Critical file is not ready</label>
+          <!--label><input type="checkbox" id="towers4" name="subsystems" value="D">Software keeps crashing</label-->
+          <!--label><input type="checkbox" id="towers5" name="subsystems" value="E">Stick not sending</label-->
+          <!--label><input type="checkbox" id="towers6" name="subsystems" value="F">Extremely slow job population</label-->
+        </div>
+        <br>
+        <input type="checkbox" class="Q3" id="1618s" name="systems" value="1618s" data-target="#sub1618s">
+        <label for="1618s">1618s</label>
+        <div class="substep" id="sub1618s">
+          <label><input type="checkbox" id="1618s1" name="subsystems" value="Jobs will not print/send">Jobs will not print/send</label>
+          <label><input type="checkbox" id="1618s2" name="subsystems" value="Belt is broken">Steel belt is broken</label>
+          <label><input type="checkbox" id="1618s3" name="subsystems" value="Printhead not moving">Printhead not moving</label>
+          <label><input type="checkbox" id="1618s4" name="subsystems" value="Printer unresponsive">Printer unexpectedly offline</label>
+          <label><input type="checkbox" id="1618s5" name="subsystems" value="Pulling air needed">Ink issues (air in lines)</label>
+          <label><input type="checkbox" id="1618s6" name="subsystems" value="Ergosoft Error">Ergosoft errors</label>
+        </div>
+        <br>
+        <label for="systemsfix">Other</label><br>
+        <input type=textarea class="Q3" id="systemsfix" name="systemstxt" value=""></textarea>
+        <br>
+        <input type="button" class="collapse pushit" onclick="systemCheck()" value="Continue" data-target="#level3">
+    </div>
     <div class="editor">
         <input type="button" class="reset pushit" width="50" value="Edit Response" data-target="#level3"/>
       </div>
@@ -131,31 +228,39 @@ action="https://script.google.com/macros/s/AKfycbx13tUc79k5NyFLlM319CTWDFaL70LII
       <p class="response"><span id="rating"></span></p>
     </div>
   </div>
+  <!-- Fourth Question test -->
+  <div class="step">
+    <div class="sectionhead">
+      <h4>Question 4 of 4</h4>
+    </div>
+    <div class="questions" id="level4">
+      <h3>Please include any additional information here</h3>
+      <!--<label for="txtbox">Other</label><br>-->
+      <input type="textarea" id="txtbox" name="txtaria" value=""></textarea>
+      <input type="button" class="collapse pushit" onclick="textareaCheck()" value="Continue" data-target="#level4">
+    </div>
+    <div class="editor">
+      <input type="button" class="reset pushit" width="50" value="Edit Response" data-target="#level4"/>
+    </div>
+    <div>
+      <p class="response"><span id="texttArea"></span></p>
+    </div>
+  </div>
+<!-- Submission button here -->
 <div class="step">
     <button class="button-success" onclick='allTogether()'>&nbsp;Send Report</button>
 </div>
-
 </form>
-<!-- J  QUERY  TEST --><!--
-<script type="text/javascript">
-$(document).ready(function(){
-  if (jQuery) {
-    // jQuery is loaded
-    alert("Yeah! It work!");
-  } else {
-   // jQuery is not loaded
-   alert("Doesn't Work");
- }
-});
-</script>-->
-  <!-- Customise the Thankyou Message People See when they submit the form: -->
+
   <div style="display:none;" id="thankyou_message">
     <div class="questions">
-      <h2>Thank you for your submission.
-      The correct person will be notified!</h2>
-      <p class="response"><span id ='finalScore'></span></p><br>
-      <p class="response"><span id ='ticketinfo'></span></p>
-      <p class="response"><span id ='otherinfo'></span></p>
+      <h2>Thank you for your submission.</h2>
+      <h3>The correct person will be notified!</h3>
+      <div class="email">
+        <em>Contact:</em><p class="subemail"><span id ='finalScore'></span></p>
+        <em>Ticket:</em><p class="subemail"><span id ='ticketinfo'></span></p>
+        <em>Notes:</em><p class="subemail"><span id ='otherinfo'></span></p>
+      </div>
     </div>
       <!-- "due to the severity of your issue, expect a respense in - ?" -->
   </div>
@@ -163,8 +268,6 @@ $(document).ready(function(){
   <!-- Submit the Form to Google Using "AJAX" -->
   <script data-cfasync="false" type="text/javascript"
   src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
-  <!-- <script data-cfasync="false" type="text/javascript"
-  src="/form-submission-handler.js"></script> -->
 <!-- END -->
 </div>
 </body>

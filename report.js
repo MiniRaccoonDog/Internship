@@ -19,6 +19,7 @@ var saveSeverity="";
 var saveNature="";
 var machineTicket="";
 var natureOtherTicket="";
+var txtwrds="";
 /*For Question ONE*/
 function severityCheck() {
    var severity = document.forms[0].elements["severity"];
@@ -34,17 +35,17 @@ function severityCheck() {
 }
 /*For Question TWO*/
 function systemCheck() {
-  var system = document.forms[0].elements["systems"];
+  var systems = document.forms[0].elements["systems"];
   var txt = "";
-  var txt2 = document.getElementById("systemfix").value;
-  var i;
-  for (i = 0; i < system.length; i++) {
-    if (system[i].checked) {
-      txt = txt + system[i].value + ", ";
+  var txt2 = document.getElementById("systemsfix").value;
+  var b;
+  for (b = 0; b < systems.length; b++) {
+    if (systems[b].checked) {
+      txt = txt + systems[b].value + ", ";
     }
   }
-  document.getElementById("rating").innerHTML = "Machines affected are: " + txt + txt2;
-  window.machineTicket = txt + txt2+". ";
+  document.getElementById("rating").innerHTML = "Machines affected are: " + txt + txt2 + ". ";
+  window.machineTicket = txt + txt2;
 }
 /*For Question THREE*/
 function natureCheck() {
@@ -57,11 +58,34 @@ function natureCheck() {
       txt3 = txt3 + nature[c].value;
     }
   }
-  console.log(txt3);
   window.saveNature = txt3;
-  document.getElementById("naturetype").innerHTML = "The problem appears to be " + txt3 +". "+ txt32;
-  window.natureOtherTicket = txt32+". ";
+  document.getElementById("naturetype").innerHTML = "The problem appears to be " + txt3 +". "+ txt32 + ". ";
+  window.natureOtherTicket = txt32;
 };
+
+/*BOX SELECTION*/
+$()
+
+
+/*For Question FOUR*/
+function textareaCheck() {
+     window.txtwrds = document.getElementById("txtbox").value;
+   document.getElementById("texttArea").innerHTML = "Additional Notes: " + txtwrds;
+};
+
+/*subQuestion Expander*/
+$( document ).ready(function() {
+  $(".Q3").change(function () {
+    var subs = $(this).attr("data-target");
+    if ($(subs).hasClass("active")) {
+      $(subs).removeClass("active")
+    } else {
+      $(subs).addClass("active");
+    }
+  })
+})
+
+
 /*Okay lets try some bullshit */
 
 function allTogether () {
@@ -95,7 +119,7 @@ function allTogether () {
       default:
         console.log("Invalid response!");
     };
-  document.getElementById("finalScore").innerHTML = "Contact: "+ emailStart;
-  document.getElementById("ticketinfo").innerHTML = "Ticket is of " + saveSeverity + " importance, impacting the " + machineTicket
-  document.getElementById("otherinfo").innerHTML =  "Notes: " + natureOtherTicket
+  document.getElementById("finalScore").innerHTML = " "+ emailStart;
+  document.getElementById("ticketinfo").innerHTML = "Importance level is " + saveSeverity + ", impacting the " + machineTicket + ". ";
+  document.getElementById("otherinfo").innerHTML = natureOtherTicket + txtwrds;
 }

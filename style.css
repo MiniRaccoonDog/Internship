@@ -4,6 +4,17 @@
 .step.active {
   display:block;
 }
+.substep {
+  display: none
+}
+.substep.active {
+  display:block;
+}
+.substep label{
+  display:block;
+  margin-left: 1em;
+}
+
 h1 {
   text-align:center;
   color:#337981;
@@ -15,7 +26,7 @@ h4 {
 }
 
 .wrapper {
-  width: 100%;
+  width: 95%;
   padding: 1em;
 }
 @media (min-width: 700px) {
@@ -49,7 +60,18 @@ h4 {
   padding: .25em;
   text-align: center;
 }
-
+.email{
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: .4em;
+  background-color: white;
+  margin: 0px;
+}
+.subemail{
+  border-radius: .4em;
+  padding: 1em;
+  background-color: #eff1f4;
+}
 textarea {
   width: 95%;
   height: 50px;
