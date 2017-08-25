@@ -4,6 +4,19 @@
 .step.active {
   display:block;
 }
+.substep {
+  display: none
+}
+.substep.active {
+  display:block;
+}
+.substep label{
+  display:block;
+  margin-left: 1em;
+}
+.hide {
+  display: none
+}
 h1 {
   text-align:center;
   color:#337981;
@@ -13,9 +26,11 @@ h4 {
   padding:.35em;
   margin:0px;
 }
-
+h3{
+  padding: none;
+}
 .wrapper {
-  width: 100%;
+  width: 95%;
   padding: 1em;
 }
 @media (min-width: 700px) {
@@ -49,7 +64,18 @@ h4 {
   padding: .25em;
   text-align: center;
 }
-
+.email{
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: .4em;
+  background-color: white;
+  margin: 0px;
+}
+.subemail{
+  border-radius: .4em;
+  padding: 1em;
+  background-color: #eff1f4;
+}
 textarea {
   width: 95%;
   height: 50px;
@@ -78,4 +104,51 @@ input[type=checkbox] {
   background-color:white;
   border-radius: 1em;
   font-size: .8em;
+}
+/*LINKIN PARK*/
+a:link {
+    background-color: transparent;
+    text-decoration: none;
+    margin: 0 auto;
+    text-align:center;
+  }
+
+a:visited {
+  opacity: 50%
+  background-color: transparent;
+  text-align:center;
+}
+
+a:hover {
+    background-color: #b5dbe2;
+    text-align:center;
+}
+
+/*TABLE STUFF GOES HERE*/
+.tablewrapper {
+  width: 95%;
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: 1em;
+  background-color: #b5dbe2;
+}
+@media (min-width: 700px) {
+  .tablewrapper {
+    max-width: 800px;
+    margin:0 auto;
+  }
+}
+.tableHead {
+  background-color: #e7f6f9;
+  text-align:center;
+  font-size:1.4em;
+  font-variant: small-caps;
+  font-weight: bold;
+}
+.hoverRow {
+  color: blue;
+}
+.oddRows {
+  padding: 1em;
+  background-color: #e7f6f9;
 }
