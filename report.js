@@ -21,6 +21,7 @@ var machineTicket="";
 var machineOther="";
 var natureOtherTicket="";
 var txtwrds="";
+var tablesumm="";
 /*For Question ONE*/
 function severityCheck() {
    var severity = document.forms[0].elements["severity"];
@@ -52,26 +53,34 @@ function systemCheck() {
   var finaltxt="";
   var b;
   var b2;
+  var sumtxt="";
   for (b = 0; b < systems.length; b++) {
     if (systems[b].checked) {
       var selector = $(systems[b]).attr("data-target");
       var subbies = $(selector).find(".subsystems");
       var txt = systems[b].value
       $("#rating").append("<h3>"+txt+"</h3><ul></ul>")
-      finaltxt += "<h3>"+txt+"</h3><ul>"
+      finaltxt += "<h3>"+txt+"</h3><ul>";
+      sumtxt += " |"+ txt +": ";
+      console.log("first", sumtxt);
       for (b2 = 0; b2 < subbies.length; b2++) {
         if (subbies[b2].checked) {
           var subtxt = subbies[b2].value
           $("#rating").append("<li>"+subtxt+"</li>");
           finaltxt += "<li>"+subtxt+"</li>";
+          sumtxt += subtxt + ", ";
+          console.log("second", sumtxt)
         }
       }
       finaltxt += "</ul>"
     }
   }
+  console.log("second", sumtxt);
   $("#rating2").append("Other: "+txt2);
+  window.tablesumm = sumtxt;
   window.machineTicket = finaltxt;
   window.machineOther= txt2;
+  console.log(finaltxt);
 }
 
 /*For Question THREE*/
@@ -95,11 +104,10 @@ function natureCheck() {
 function textareaCheck() {
      window.txtwrds = document.getElementById("txtbox").value;
    document.getElementById("texttArea").innerHTML = "Additional Notes: " + txtwrds;
-   //document.getElementById("SECRETbox").checked = true;
    var plz = document.getElementById("SECRETbox");
+   var plz2 = document.getElementById("SECRETbox2");
    plz.value = "Additional Information: " + natureOtherTicket + ". " + machineOther + ". " + txtwrds;
-   console.log(plz);
-   console.log(document.getElementById("SECRETbox").value);
+   plz2.value = tablesumm;
 };
 
 /*subQuestion Expander*/
@@ -139,11 +147,6 @@ function allTogether () {
         break;
       default:
         console.log("Invalid response!");
-
-        console.log("step one" , emailEnder);
-        console.log("step one" , emailStart);
-        console.log("step one" , switchTWO);
-        console.log("step one" , switchONE);
     };
 
 
@@ -159,11 +162,6 @@ function allTogether () {
         break;
       default:
         console.log("Invalid response!");
-
-        console.log("step two" , emailEnder);
-        console.log("step two" , emailStart);
-        console.log("step two" , switchTWO);
-        console.log("step two" , switchONE);
     };
   document.getElementById("finalScore").innerHTML = " "+ emailStart;
   document.getElementById("ticketstatus").innerHTML = "Alert level: <strong>" + saveSeverity + "</strong>"

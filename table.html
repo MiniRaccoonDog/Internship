@@ -8,7 +8,7 @@ google.charts.setOnLoadCallback(drawTable);
 
 function drawTable() {
   var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16G-G_grSB4wgMGai2i_WtDDK6pJnb969Da4p2eO_Bcs/edit?usp=sharing');
-  query.setQuery('SELECT A, B, C, D, S, V ORDER BY A DESC LIMIT 15');
+  query.setQuery('SELECT A, B, C, D, V, W ORDER BY A DESC LIMIT 15');
   query.send(makeTable);
 }
 
