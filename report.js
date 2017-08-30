@@ -1,18 +1,30 @@
 $( document ).ready(function() {
   $( ".collapse" ).click(function() {
+    var togglethis = $(this).closest(".step").find(".reset");
     var nextStep = $(this).parent().parent().next(".step");
+    toggleSection(togglethis);
+    /*
     var target = $(this).attr("data-target");
     $(target).slideToggle("fast", function(){
       $(".response").show();
-    })
+      console.log(this);
+      toggleSection(togglethis);
+    })*/
     $(nextStep).addClass("active");
   });
   $( ".reset" ).click(function() {
-    var target = $(this).attr("data-target");
-    $( target ).slideToggle( "slow", function() {
+    toggleSection(this);
     })
-  })
 });
+
+function toggleSection(element){
+  var questionToggle = $(element);
+  var target = $(element).attr("data-target");
+  questionToggle.closest(".step").find(".response").slideDown();
+  $( target ).slideToggle( "slow", function() {
+    questionToggle.find(".fa").toggle();
+  });
+};
 
 /*Establish Globals????*/
 var saveSeverity="";
@@ -62,25 +74,21 @@ function systemCheck() {
       $("#rating").append("<h3>"+txt+"</h3><ul></ul>")
       finaltxt += "<h3>"+txt+"</h3><ul>";
       sumtxt += " |"+ txt +": ";
-      console.log("first", sumtxt);
       for (b2 = 0; b2 < subbies.length; b2++) {
         if (subbies[b2].checked) {
           var subtxt = subbies[b2].value
           $("#rating").append("<li>"+subtxt+"</li>");
           finaltxt += "<li>"+subtxt+"</li>";
           sumtxt += subtxt + ", ";
-          console.log("second", sumtxt)
         }
       }
       finaltxt += "</ul>"
     }
   }
-  console.log("second", sumtxt);
   $("#rating2").append("Other: "+txt2);
   window.tablesumm = sumtxt;
   window.machineTicket = finaltxt;
   window.machineOther= txt2;
-  console.log(finaltxt);
 }
 
 /*For Question THREE*/
@@ -95,7 +103,7 @@ function natureCheck() {
     }
   }
   window.saveNature = txt3;
-  document.getElementById("naturetype").innerHTML = "The problem appears to be " + txt3 + ". " + txt32;
+  document.getElementById("naturetype").innerHTML = txt3 + ". " + txt32;
   window.natureOtherTicket = txt32;
 };
 
@@ -151,13 +159,13 @@ function allTogether () {
 
 
   switch (switchONE) {
-      case "software or files":
+      case "Software or Files":
         emailStart = "sysops" + emailEnder
         break;
-      case "mechanical or physical":
+      case "Mechanical or Physical":
         emailStart = "maintenance"+ emailEnder
         break;
-      case "admin or website":
+      case "Admin or Website":
         emailStart = "plumbing"+ emailEnder
         break;
       default:

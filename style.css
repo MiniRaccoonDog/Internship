@@ -104,6 +104,14 @@ input[type=checkbox] {
   background-color:white;
   border-radius: 1em;
   font-size: .8em;
+
+  margin-top: 1em;
+}
+.fa {
+  float:left;
+}
+.fa.fa-plus-circle {
+  display: none;
 }
 /*LINKIN PARK*/
 a:link {

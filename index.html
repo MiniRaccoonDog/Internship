@@ -6,6 +6,7 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="report.js"> </script>
+  <script src="https://use.fontawesome.com/4b1442798f.js"></script>
 </head>
 
 <body>
@@ -25,8 +26,13 @@ action="https://script.google.com/macros/s/AKfycbx13tUc79k5NyFLlM319CTWDFaL70LII
   </div>
   <!-- FIRST QUE$TION IS GONNA GO HERE -->
   <div class="step active">
-    <div class="sectionhead">
-      <h4>Question 1 of 4</h4>
+
+    <div class="sectionhead reset" data-target="#level1">
+      <h4>
+        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+        <i class="fa fa-minus-circle" aria-hidden="true"></i>
+        <span>Question 1 of 4</span>
+      </h4>
     </div>
     <div class="questions" id="level1">
       <h3>How is production affected?</h3>
@@ -41,27 +47,28 @@ action="https://script.google.com/macros/s/AKfycbx13tUc79k5NyFLlM319CTWDFaL70LII
         <br>
         <input type="button" class="collapse pushit" onclick="severityCheck()" value="Continue" data-target="#level1">
     </div>
-    <div class="editor">
-      <input type="button" class="reset pushit" width="50" value="Edit Response" data-target="#level1"/>
-    </div>
     <div>
       <p class="response"><span id="priority"></span></p>
     </div>
   </div>
   <!-- SECOND QUE$TION IS GONNA GO HERE -->
   <div class="step">
-      <div class="sectionhead">
-        <h4>Question 2 of 4</h4>
+      <div class="sectionhead reset" data-target="#level2">
+        <h4>
+          <i class="fa fa-plus-circle" aria-hidden="true"></i>
+          <i class="fa fa-minus-circle" aria-hidden="true"></i>
+          <span>Question 2 of 4</span>
+        </h4>
       </div>
       <div class="questions" id="level2">
       <h3>What is the nature of the problem?</h3>
-        <input type="radio" id=mechanicalphysical name="nature" value="mechanical or physical">
+        <input type="radio" id=mechanicalphysical name="nature" value="Mechanical or Physical">
         <label for="mechanicalphysical">Mechanical or Physical in nature</label>
         <br>
-        <input type="radio" id=softwarefiles name="nature" value="software or files">
+        <input type="radio" id=softwarefiles name="nature" value="Software or Files">
         <label for="softwarefiles">Related to Software or File Errors</label>
         <br>
-        <input type="radio" id=adminwebsite name="nature" value="admin or website">
+        <input type="radio" id=adminwebsite name="nature" value="Admin or Website">
         <label for="adminwebsite">Related to our Website/Admin</label>
         <br>
         <label type="radio" for="freenature">Other</label><br>
@@ -69,17 +76,17 @@ action="https://script.google.com/macros/s/AKfycbx13tUc79k5NyFLlM319CTWDFaL70LII
         <br>
         <input type="button" class="collapse pushit" onclick="natureCheck()" value="Continue" data-target="#level2">
     </div>
-    <div class="editor">
-      <input type="button" class="reset pushit" width="50" value="Edit Response" data-target="#level2"/>
-    </div>
     <div>
       <p class="response"><span id ='naturetype'></span></p>
     </div>
   </div>
   <!-- THIRD QUE$TION IS GONNA GO HERE -->
   <div class="step">
-    <div class="sectionhead">
-      <h4>Question 3 of 4</h4>
+    <div class="sectionhead reset" data-target="#level3">
+      <h4>
+        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+        <i class="fa fa-minus-circle" aria-hidden="true"></i>
+        <span>Question 3 of 4</span></h4>
     </div>
     <div class="questions" id="level3">
         <input type="checkbox" class="Q3" id="allegro" name="systems" value="Allegro" data-target="#subAllegro">
@@ -221,9 +228,6 @@ action="https://script.google.com/macros/s/AKfycbx13tUc79k5NyFLlM319CTWDFaL70LII
         <br>
         <input type="button" class="collapse pushit" onclick="fullSystemCheck()" value="Continue" data-target="#level3">
     </div>
-    <div class="editor">
-        <input type="button" class="reset pushit" width="50" value="Edit Response" data-target="#level3"/>
-      </div>
     <div>
       <p class="response"><strong>Machines or Systems affected:</strong><br><span id="rating"></span></p>
       <p class="response"><span id="rating2"></span></p>
@@ -231,19 +235,20 @@ action="https://script.google.com/macros/s/AKfycbx13tUc79k5NyFLlM319CTWDFaL70LII
   </div>
   <!-- Fourth Question test -->
   <div class="step">
-    <div class="sectionhead">
-      <h4>Question 4 of 4</h4>
+    <div class="sectionhead reset" data-target="#level4">
+      <h4>
+        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+        <i class="fa fa-minus-circle" aria-hidden="true"></i>
+        <span>Question 4 of 4</span>
+      </h4>
     </div>
     <div class="questions" id="level4">
       <h3>Please include any additional information here</h3>
-      <!--<label for="txtbox">Other</label><br>-->
       <input type="textarea" id="txtbox" name="txtaria" placeholder="Fill out if necessary" value=""></textarea>
       <input type="textarea" class="hide" id="SECRETbox" name="comments" value="A"></textarea>
       <input type="textarea" class="hide" id="SECRETbox2" name="summary" value="B"></textarea>
+      <br>
       <input type="button" class="collapse pushit" onclick="textareaCheck()" value="Continue" data-target="#level4">
-    </div>
-    <div class="editor">
-      <input type="button" class="reset pushit" width="50" value="Edit Response" data-target="#level4"/>
     </div>
     <div>
       <p class="response"><span id="texttArea"></span></p>
