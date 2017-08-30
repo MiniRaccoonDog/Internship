@@ -1,6 +1,5 @@
 $( document ).ready(function() {
   $( ".collapse" ).click(function() {
-    console.log(this);
     var togglethis = $(this).closest(".step").find(".reset");
     var nextStep = $(this).parent().parent().next(".step");
     toggleSection(togglethis);
