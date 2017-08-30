@@ -1,66 +1,94 @@
+.step {
+  display: none
+}
+.step.active {
+  display:block;
+}
+.substep {
+  display: none
+}
+.substep.active {
+  display:block;
+}
+.substep label{
+  display:block;
+  margin-left: 1em;
+}
+.hide {
+  display: none
+}
 h1 {
   text-align:center;
-  background-color: #e7f6f9;
   color:#337981;
   font-family: 'Lato black', sans-serif;
 }
-
 h4 {
-  text-align:center;
-  color:white;
+  padding:.35em;
+  margin:0px;
 }
-
+h3{
+  padding: none;
+}
+.wrapper {
+  width: 95%;
+  padding: 1em;
+}
+@media (min-width: 700px) {
+  .wrapper {
+    max-width: 500px;
+    margin:0 auto;
+  }
+}
 .sectionhead {
-  margin: 0 auto;
-  width: 400px;
   border-radius: 1em;
   background-color: #337981;
+  text-align:center;
+  color:white;
+  margin-top: 1em;
 }
-
 .response {
   display:none;
-  /* Just to center on the page */
-  margin: 0 auto;
-  width: 400px;
-  /* To see the outline */
   padding: 1em;
   border: 1px solid #CCC;
   border-radius: 1em;
-  background-color: #e7f6f9;
+  background-color: #b5dbe2;
+  margin: 0px;
 }
-
 .questions {
-  /* Just to center on the page */
-  margin: 0 auto;
-  width: 400px;
-  /* To see the outline */
   padding: 1em;
   border: 1px solid #CCC;
   border-radius: 1em;
   background-color: #e7f6f9;
 }
-
-.reset {
-  margin: 0 auto;
-  width: 400px;
+.editor{
+  padding: .25em;
+  text-align: center;
 }
-
+.email{
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: .4em;
+  background-color: white;
+  margin: 0px;
+}
+.subemail{
+  border-radius: .4em;
+  padding: 1em;
+  background-color: #eff1f4;
+}
 textarea {
-  background-color: #bef7d3;
   width: 95%;
   height: 50px;
   padding: 10px;
   color:black;
+  background-color: #e6ffff;
 }
-
 input[type=radio] {
-  padding: 5px;
+  margin: .5em;
 }
-
 input[type=checkbox] {
-  padding: 5px;
+  margin: .5em;
 }
-
 .button-success {
   margin: 0 auto;
   padding: 2px;
@@ -69,6 +97,65 @@ input[type=checkbox] {
   border-radius: 1em;
   background-color: #337981;
   color:white;
-  font-family: inherit;
   font-size: 2em;
+}
+.pushit {
+  width: 50%;
+  background-color:white;
+  border-radius: 1em;
+  font-size: .8em;
+  margin-top: 1em;
+}
+.fa {
+  float:left;
+}
+.fa.fa-plus-circle {
+  display: none;
+}
+/*LINKIN PARK*/
+a:link {
+    background-color: transparent;
+    text-decoration: none;
+    margin: 0 auto;
+    text-align:center;
+  }
+
+a:visited {
+  opacity: 50%
+  background-color: transparent;
+  text-align:center;
+}
+
+a:hover {
+    background-color: #b5dbe2;
+    text-align:center;
+}
+
+/*TABLE STUFF GOES HERE*/
+.tablewrapper {
+  width: 95%;
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: 1em;
+  background-color: #b5dbe2;
+}
+@media (min-width: 700px) {
+  .tablewrapper {
+    max-width: 800px;
+    margin:0 auto;
+  }
+}
+.tableHead {
+  background-color: #e7f6f9;
+  text-align:center;
+  font-size:1.4em;
+  font-variant: small-caps;
+  font-weight: bold;
+}
+.hoverRow {
+  color: blue;
+}
+.oddRows {
+  padding: 1em;
+  background-color: #e7f6f9;
 }
